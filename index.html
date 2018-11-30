@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Simples memory game I could manage to make</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./assets/css/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <div id="game">
+                    <h4>
+                        The simplest memory game I could manage to make:
+                    </h4>
+                    <div class="panel">
+                        <div class="left">
+                            You've tried <strong id="tries">0</strong> times.
+                            <a href="javascript:void(0)" onclick="window.gameRestart()">Restart?</a>
+                        </div>
+                        <div class="right">
+                            <i class="fa fa-clock-o"></i>
+                            <span id="timer">0</span>
+                        </div>
+                    </div>
+                    <div id="board"></div>
+                    <div id="credits">
+                        created by <a href="http://github.com/ericgruby01" target="_blank">Eric Gruby</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer"><a href="http://github.com/ericgruby01" target="_blank">Eric Gruby</a> &copy; <span id="year"></span></div>
+        </div>
+        <script src='./assets/js/index.js'></script>
+    </body>
+</html>

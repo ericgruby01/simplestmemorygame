@@ -1,0 +1,168 @@
+.footer,
+.footer a {
+    color: #777;
+}
+.card,
+body,
+html {
+    position: relative;
+}
+.card,
+.card:before {
+    width: 40px;
+    height: 40px;
+}
+* {
+    box-sizing: border-box;
+}
+body,
+html {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+.container {
+    display: flex;
+    min-height: 100vh;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.container .content {
+    flex-grow: 1;
+}
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #f0f0f0;
+}
+#credits,
+#credits a {
+    color: #ccc;
+}
+#game {
+    max-width: 298px;
+    margin: 2em auto 0;
+}
+#game h4 {
+    margin-top: 0;
+}
+#board {
+    padding: 0.5em;
+    border: 1px solid #f0f0f0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 40px));
+    grid-gap: 0.5em;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+#credits {
+    margin-top: 10px;
+    text-align: right;
+    font-size: 85%;
+}
+.card.found,
+.card.not-match {
+    color: #fff;
+}
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transition: all 0.3s ease-in-out, color 0s linear;
+}
+.card i {
+    visibility: hidden;
+    opacity: 0;
+}
+.card.active,
+.card.found {
+    transform: rotateY(0);
+}
+.card.active i,
+.card.found i {
+    visibility: visible;
+    opacity: 1;
+}
+.card.found:before {
+    background-color: #7ee8b7;
+}
+.card.not-match:before {
+    background-color: tomato;
+}
+.card:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #f0f0f0;
+    transform-origin: 50% 50%;
+    transform: rotateY(0);
+    z-index: -1;
+}
+.panel {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+@keyframes shake {
+    from,
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+.shake {
+    -webkit-animation-name: shake;
+    animation-name: shake;
+}
+@keyframes tada {
+    from,
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    10%,
+    20% {
+        -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+    40%,
+    60%,
+    80% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+}
+.tada {
+    -webkit-animation-name: tada;
+    animation-name: tada;
+}
